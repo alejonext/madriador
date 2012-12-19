@@ -1,0 +1,25 @@
+{
+	"name": "application-name",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"start": "node app"
+	},
+	"dependencies": {
+		"express": "3.0.0rc1",
+		"ejs": "*",
+		"less-middleware": "*"
+	},
+	"twitter": {
+		"consumer_key": "isRIedTKu7Xqg51K5UGlQ",
+		"consumer_secret": "UJD9nSeDYx0FJG6UZuB15p7YxcJIr7C6yJHUSFvk",
+		"access_token": "998465882-yPSfgoVQtxuYYcqHyKFhWe48I58QGiby9RXSe4OT",
+		"access_token_secret": "1SdTFQabjGltLFxwDCcy1KD0wlIYTZYA8gqkmrDY"
+	},
+	"db": {
+		"host": "localhost",
+		"path": "madr",
+		"type": "mongo",
+		"port": 27017
+	}
+}
