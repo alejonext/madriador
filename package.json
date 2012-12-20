@@ -11,10 +11,10 @@
 		"less-middleware": "*"
 	},
 	"twitter": {
-		"consumer_key": "isRIedTKu7Xqg51K5UGlQ",
-		"consumer_secret": "UJD9nSeDYx0FJG6UZuB15p7YxcJIr7C6yJHUSFvk",
-		"access_token": "998465882-yPSfgoVQtxuYYcqHyKFhWe48I58QGiby9RXSe4OT",
-		"access_token_secret": "1SdTFQabjGltLFxwDCcy1KD0wlIYTZYA8gqkmrDY"
+		"consumer_key": "YourKey",
+		"consumer_secret": "YourKeyScret",
+		"access_token": "TheToken",
+		"access_token_secret": "TokenSecret"
 	},
 	"db": {
 		"host": "localhost",
