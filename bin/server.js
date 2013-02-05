@@ -7,35 +7,28 @@ var express = require('express'),
 
 var app = express();
 
-app.configure(function() {
-	app.set('port', process.env.PORT || 3000);
-	app.set('views', __dirname + '/views');
-	app.set('view engine', 'jade');
-	app.use(express.favicon());
-	app.use(express.logger('dev'));
-	app.use(express.bodyParser());
-	app.use(express.methodOverride());
-	app.use(express.cookieParser('your secret here'));
-	app.use(express.session());
-	app.use(app.router);
-	app.use(require('less-middleware')({
-		src : __dirname + '/public'
-	}));
-	app.use(express.static(path.join(__dirname, 'public')));
-});
-
-app.configure('development', function() {
-	app.use(express.errorHandler());
-});
-
-app.get('/', routes.index);
-app.post('/user', routes.user);
-app.post('/madr', routes.madriar);
-
-module.exports = app;
-
-if (!module.parent) {
-	require('http').createServer(app).listen(app.get('port'), function() {
-		console.log("Express server listening on port " + app.get('port'));
+module.exports = function(data){
+	app.configure(function() {
+		app.set('views', __dirname + '/views');
+		app.set('view engine', 'jade');
+		app.use(express.favicon());
+		app.use(express.logger(data.get("status").substring(3)));
+		app.use(express.bodyParser());
+		app.use(express.methodOverride());
+		app.use(express.cookieParser(data.get("pass")));
+		app.use(express.session());
+		app.use(app.router);
+		app.use(require('less-middleware')({
+			src : __dirname + '/public'
+		}));
+		app.use(express.static(path.join(__dirname, 'public')));
 	});
-};
+	route = new routes(data);
+	app.configure(data.get("status"), function() {
+		app.use(express.errorHandler());
+	});
+	app.get('/', route.index);
+	app.post('/user', route.user);
+	app.post('/madr', route.madriar);
+	return app;
+} ;

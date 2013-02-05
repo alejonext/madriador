@@ -9,17 +9,5 @@
 		"express": "3.0.0rc1",
 		"ejs": "*",
 		"less-middleware": "*"
-	},
-	"twitter": {
-		"consumer_key": "YourKey",
-		"consumer_secret": "YourKeyScret",
-		"access_token": "TheToken",
-		"access_token_secret": "TokenSecret"
-	},
-	"db": {
-		"host": "localhost",
-		"path": "madrazos",
-		"type": "mongodb",
-		"port": 27017
 	}
 }

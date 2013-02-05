@@ -5,11 +5,7 @@
 
  var path 	= require('path'),
 	dir		= path.join(__dirname, '..'),
-	sys 	= require('sys'),
-	server  = require('./app.js'),
 	program = require('commander'),
-	_ 		= require('underscore'), 
-	os 		= require('os'),
 	lib 	= require( path.join(dir, 'lib' ) );
 
 program.name = lib.config["name"] ;
@@ -18,7 +14,6 @@ program.version( lib.config["version"] );
 
 program
 	.option('-w, --web-server [port]', 'Servidor web y el puerto')
-	.option('-s, --stream-twitter', 'Correr el stream en tuiter' )
 	.option('-c, --configuration [path]', 'La configuracion del usuario en twiter en json' )
 
 config = lib.config( path.resolve( program["configuration"] ) );
@@ -26,6 +21,7 @@ program.on('--help', function(){
 	console.log( config["help"].join('\n') );
 });
 server.set( parserFloat( program["web-server"] ) || 3000 )
+	server  = require('./app.js')( config );
 	require('http').createServer( server ).listen( server.get('port'), function() {
 		console.log("Express server listening on port " + server.get('port'));
 });
