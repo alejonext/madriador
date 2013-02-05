@@ -1,0 +1,1 @@
+Este es un programa que madrea (Insulta), se gun las tags que se utlizen en twuiter, actualmente se ecuentra en desarrollo si quiere insultar a todos sin subir las concecuencias de la discriminacion digital. Ayudeme.
