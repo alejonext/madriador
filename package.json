@@ -1,13 +1,26 @@
 {
-	"name": "application-name",
-	"version": "0.0.1",
+	"name": "madriador",
+	"version": "0.3.1",
+	"public" : true,
 	"private": false,
-	"scripts": {
-		"start": "madriador"
+	"description": "Este programa insulta a todos por twitter",
+	"author": "Alejo Next <alejonext@gmail.com>",
+	"keywords": ["insultos", "madrazos", "twitter", "mongo", "express", "TT"],
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:alejonext/madriador.git"
+	},
+	"bin": {
+		"madriador": "./bin/madriador"
 	},
 	"dependencies": {
-		"express": "3.0.0rc1",
-		"ejs": "*",
-		"less-middleware": "*"
+		"express": ">=3.0.0",
+		"jade": "*",
+		"less-middleware": "*",
+		"configurable" : "*",
+		"commander" :"*",
+		"underscore" : "*",
+		"ntwitter" : "*",
+		"twit" : "*"
 	}
 }
