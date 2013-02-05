@@ -1,9 +1,9 @@
 {
 	"name": "application-name",
 	"version": "0.0.1",
-	"private": true,
+	"private": false,
 	"scripts": {
-		"start": "node app"
+		"start": "madriador"
 	},
 	"dependencies": {
 		"express": "3.0.0rc1",
@@ -18,8 +18,8 @@
 	},
 	"db": {
 		"host": "localhost",
-		"path": "madr",
-		"type": "mongo",
+		"path": "madrazos",
+		"type": "mongodb",
 		"port": 27017
 	}
 }

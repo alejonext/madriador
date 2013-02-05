@@ -1,11 +1,8 @@
-/**
- * Module dependencies.
- */
-
+/*
+* Servidor Web
+*/
 var express = require('express'), 
 	routes = require('./routes'), 
-	lib = require('./lib'),
-	http = require('http'), 
 	path = require('path');
 
 var app = express();
@@ -35,9 +32,10 @@ app.get('/', routes.index);
 app.post('/user', routes.user);
 app.post('/madr', routes.madriar);
 
-http.createServer(app).listen(app.get('port'), function() {
-	console.log("Express server listening on port " + app.get('port'));
-});
+module.exports = app;
 
-lib.twitter.stream();
-setInterval( lib.twitter.index, 1000 );
+if (!module.parent) {
+	require('http').createServer(app).listen(app.get('port'), function() {
+		console.log("Express server listening on port " + app.get('port'));
+	});
+};
